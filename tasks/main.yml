@@ -11,7 +11,7 @@
     - mongodb-org
 
 - name: download archive
-  get_url: url=http://download.prediction.io/PredictionIO-{{ predictionio.version }}.zip dest=/tmp/PredictionIO-{{ predictionio.version }}.zip
+  get_url: url=https://github.com/PredictionIO/PredictionIO/archive/v{{ predictionio.version }}.zip dest=/tmp/PredictionIO-{{ predictionio.version }}.zip
   when: predictionpath.stat.isdir is not defined
 
 - name: extract archive
