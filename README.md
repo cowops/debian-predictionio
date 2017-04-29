@@ -11,7 +11,7 @@ This role requires a debian compliant system such as ubuntu.
 Role Variables
 --------------
 
-predictionio: 
+predictionio:
     version: "0.8.0"
 
 Dependencies
@@ -24,7 +24,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: loranger.debian-predictionio, predictionio.version: "0.8.0" }
+         - { role: cowops.debian-predictionio, predictionio.version: "0.8.0" }
 
 Tasks
 -----
