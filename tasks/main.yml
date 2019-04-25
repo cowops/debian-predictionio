@@ -4,11 +4,14 @@
   register: predictionpath
 
 - name: install required packages
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - unzip
-    - openjdk-7-jdk
-    - mongodb-org
+  apt:
+    name: {{ packages }}
+    state: latest
+  vars:
+    packages:
+      - unzip
+      - openjdk-7-jdk
+      - mongodb-org
 
 - name: download archive
   get_url: url=https://github.com/PredictionIO/PredictionIO/archive/v{{ predictionio.version }}.zip dest=/tmp/PredictionIO-{{ predictionio.version }}.zip
